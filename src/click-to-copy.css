@@ -1,0 +1,126 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/*html, body {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+body {
+    margin: 0;
+    padding: 12px;
+    background-color: whitesmoke;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+article.recipe {
+    margin: 1em 1em 2em;
+    border-bottom: 8px solid #966F33;
+    padding: 0.5em 1em;
+    background-color: #0D4A08;
+    color: #D8E2D7;
+}
+
+article.recipe h2 {
+    font-family: "Bradley Hand", sans-serif;
+    text-align: center;
+    /*text-transform: uppercase;*/
+    text-decoration: underline;
+    text-decoration-color: #FFFF99;
+}
+
+.parameter {
+    background-color: #FFFF99;
+    font-family: "Bradley Hand", serif;
+    font-size: 1.0em;
+    color: mediumblue;
+}
+
+input.parameter {
+    margin: .1em .3em;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: .1em .3em;
+}
+
+textarea.parameter {
+    margin: .5em;
+    border: none;
+    padding: .5em .8em;
+}
+
+input.short {
+    width: 3.5em;
+}
+
+article.recipe ol,
+article.recipe ul {
+    padding: .5em;
+    list-style: none; /* display:flex hides the ol>li::marker anyway */
+    font-size: .8em;
+
+    background-color: #0D4A08;
+    color: #D8E2D7;
+}
+
+article.recipe li {
+    display: flex;
+    align-items: center;
+}
+
+article.recipe li > pre {
+    flex-grow: 1;
+    padding: .3em;
+}
+
+article.recipe input[type=checkbox] {
+    accent-color: #D8E2D7;
+}
+
+.recipe-step {
+    margin: 0 auto 2px .5em;
+    font-family: "iA Writer Duo S", monospace;
+    cursor: pointer;
+}
+
+.recipe-step:hover {
+    background-color: lightslategray;
+}
+
+.recipe-step.current {
+    /*font-weight: bold;*/
+    margin-bottom: 0;
+    border-bottom: 2px dashed #2E8744;
+}
+
+.recipe-step .emphasise {
+    /*color: lime;*/
+    font-weight: bold;
+}
+
+.recipe-step .parameterized {
+    color: #FFAA2B;
+}
+
+article.recipe li.paste-step {
+    margin-left: 2.5em;
+    display: flex;
+    align-items: baseline;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #242424;
+        color: #B0B0B0;
+    }
+
+    .parameter {
+        background-color: #242424;
+        color: #34934F;
+    }
+}

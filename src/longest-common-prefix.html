@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Longest Common Prefix</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .labeled-textarea {
+            display: flex;
+            align-items: baseline;
+        }
+
+        textarea {
+            margin-right: 2em;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="labeled-textarea">
+    <label for="theInputField">In:</label>
+    <textarea id="theInputField" cols="40" rows="10" onkeyup="theInputChanged(this.value)"></textarea>
+</div>
+
+<div class="labeled-textarea">
+    <label for="theOutputField">Out:</label>
+    <textarea id="theOutputField" cols="40" rows="1"></textarea>
+</div>
+
+<script src="longest-common-prefix.js"></script>
+<script>
+    const theOutputField = document.getElementById('theOutputField')
+
+    function theInputChanged(inputValue) {
+        const lines = inputValue.trim().split('\n')
+        theOutputField.value = calcBashExpansion(lines)
+    }
+</script>
+</body>
+</html>

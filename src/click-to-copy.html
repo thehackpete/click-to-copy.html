@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Click to copy</title>
+    <link rel="stylesheet" href="click-to-copy.css">
+    <script type="module" src="./click-to-copy.js"></script>
+</head>
+<body>
+
+<!--<h1>Recipes</h1>-->
+<article class="recipe">
+    <h2>Single step recipe</h2>
+    <ul>
+        <li>
+            <pre class="recipe-step" data-recipe-step>"the single step in quotes"</pre>
+        </li>
+    </ul>
+</article>
+<article class="recipe" data-recipe>
+    <h2>First real recipe</h2>
+    <form>
+        <label>Short Number parameter<input class="short parameter" data-parameter="p1" type="number"
+                                            value="6"></label>
+        <label>Few days back<input class="short parameter" data-init-value="-2b" data-parameter="p2"
+                                   type="number"></label>
+    </form>
+    <ol>
+        <li>
+            <input type="checkbox">
+            <pre class="recipe-step" data-recipe-step>cd path</pre>
+        </li>
+        <li>
+            <input type="checkbox">
+            <pre class="recipe-step" data-recipe-step>find . -atime -${p1} <span class="emphasise">-delete</span></pre>
+        </li>
+        <li>
+            <input type="checkbox">
+            <pre class="recipe-step"
+                 data-recipe-step>ssh uat-host: <span class="emphasise">find</span> /var/tmp/project-TJ/data/ -mtime -${p2}</pre>
+        </li>
+        <li class="paste-step">
+            <label>Dates:</label>
+            <textarea class="parameter" rows="6" cols="30" data-parameter="issueFilesGlob"></textarea>
+        </li>
+        <li>
+            <input type="checkbox">
+            <pre class="recipe-step" data-recipe-step><span class="emphasise">scp</span> -rp tj-uat:/var/tmp/project-TJ/data/data_${issueFilesGlob}* .</pre>
+        </li>
+    </ol>
+</article>
+<article class="recipe" data-recipe>
+    <h2>Second Recipe</h2>
+    <form>
+        <label>L<input class="parameter" data-parameter="l" list="ls" type="search"
+                              value="R"></label>
+        <datalist id="ls">
+            <option>L</option>
+            <option>N</option>
+            <option>R</option>
+            <option>S</option>
+        </datalist>
+        <label>P<input class="parameter" data-parameter="p" list="ps" type="search"
+                               value="C"></label>
+        <datalist id="ps">
+            <option>C</option>
+            <option>G 10</option>
+        </datalist>
+        <label>Date<input class="parameter" data-init-value="yyyyMMdd-2b" data-parameter="date" type="number"></label>
+    </form>
+    <ol>
+        <li>
+            <input type="checkbox">
+            <pre class="recipe-step" data-recipe-step>cd path</pre>
+        </li>
+        <li>
+            <input type="checkbox">
+            <pre class="recipe-step" data-recipe-step>del /S</pre>
+        </li>
+        <li>
+            <input type="checkbox">
+            <pre class="recipe-step" data-recipe-step>python.exe com.acme.runner <span class="emphasise">init-db</span></pre>
+        </li>
+        <li>
+            <input type="checkbox">
+            <pre class="recipe-step" data-recipe-step>python.exe com.acme.runner <span class="emphasise">create</span> -date ${date} -l ${l} -p ${p}</pre>
+        </li>
+        <li>
+            <input type="checkbox">
+            <pre class="recipe-step" data-recipe-step>python.exe com.acme.runner <span
+                    class="emphasise">verify</span> -date ${date}</pre>
+        </li>
+    </ol>
+</article>
+</body>
+</html>
